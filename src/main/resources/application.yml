@@ -1,0 +1,26 @@
+info:
+  build:
+    artifact: @project.artifactId@
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@
+
+server:
+  port: 9898
+
+security:
+  basic:
+    path: /manager
+    enabled: true
+  user:
+    name: admin
+    password: admin
+
+management:
+  context-path: ${security.basic.path}
+  security:
+    enabled: true
+    roles: SUPERUSER
+
+
+
